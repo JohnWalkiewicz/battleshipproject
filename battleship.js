@@ -63,7 +63,13 @@ var gameBoard = [
 				]
 
 function fireTorpedo() {
+fireLocation = document.getElementById("fireTorpedoInput").value;
+console.log(fireLocation);
+document.getElementById("fireTorpedoInput").value = null;
+convertLetterToNumber = fireLocation.substring(1,0);
+console.log(convertLetterToNumber);
 
-	// Your game logic will go here!
-
+convertLetterToNumber = letterConversion[convertLetterToNumber];
+collumNumber = fireLocation.substring(1,2) -1;
+document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "gray";
 }
