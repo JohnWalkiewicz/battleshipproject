@@ -3,6 +3,9 @@ var rows = 10;
 var cols = 10;
 var squareSize = 50;
 var letterArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+var hitCount = 17;
+var hits = 0;
+
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
 
@@ -72,6 +75,7 @@ var gameBoard = [
 				]
 
 function fireTorpedo() {
+
 var audio = new Audio('Voice 001.mp3');
 audio.play();
 fireLocation = document.getElementById("fireTorpedoInput").value;
@@ -84,12 +88,26 @@ convertLetterToNumber = letterConversion[convertLetterToNumber];
 collumNumber = fireLocation.substring(1,3) - 1;
 
 
+
+
+
+
+
+
 if(gameBoard[convertLetterToNumber][collumNumber] == 1){
 	 document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "red";
+	 document.getElementById("info").textContent = hitCount + "hits left";
+	 hits++;
+	 hitCount --;
 }
+
 else{
 	var audio2 = new Audio('missedSoundEffect.mp3');
 	audio2.play();
 	document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "grey";
+}
+document.getElementById("info").textContent = hitCount + "hits left. .";
+if(hits ==17){
+	gameBoardContainer.textContent = "You have destroyed all battleships";
 }
 }
