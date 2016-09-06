@@ -18,6 +18,16 @@ var letterConversion = {
 	"G": 6,
 	"H": 7,
 	"I": 8,
+	"J": 9,
+	"a": 0,
+	"b": 1,
+	"c": 2,
+	"d": 3,
+	"e": 4,
+	"f": 5,
+	"g": 6,
+	"h": 7,
+	"I": 8,
 	"J": 9
 }
 
@@ -47,7 +57,6 @@ for (i = 0; i < cols; i++) {
 		square.style.left = leftPosition + 'px';
 	}
 }
-
 // Hardcoded 2D array to indicate where the ships are placed
 var gameBoard = [
 				[0,0,0,1,1,1,1,0,0,0],
@@ -63,6 +72,8 @@ var gameBoard = [
 				]
 
 function fireTorpedo() {
+var audio = new Audio('Voice 001.mp3');
+audio.play();
 fireLocation = document.getElementById("fireTorpedoInput").value;
 console.log(fireLocation);
 document.getElementById("fireTorpedoInput").value = null;
@@ -70,6 +81,15 @@ convertLetterToNumber = fireLocation.substring(1,0);
 console.log(convertLetterToNumber);
 
 convertLetterToNumber = letterConversion[convertLetterToNumber];
-collumNumber = fireLocation.substring(1,2) -1;
-document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "gray";
+collumNumber = fireLocation.substring(1,3) - 1;
+
+
+if(gameBoard[convertLetterToNumber][collumNumber] == 1){
+	 document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "red";
+}
+else{
+	var audio2 = new Audio('missedSoundEffect.mp3');
+	audio2.play();
+	document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "grey";
+}
 }
