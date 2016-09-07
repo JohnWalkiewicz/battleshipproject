@@ -106,9 +106,12 @@ else{
 	audio2.play();
 	document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "grey";
 }
-document.getElementById("info").textContent = hitCount + "hits left. .";
+document.getElementById("info").textContent = hitCount + " hits left. .";
+
+
 if(hitsOnShip ==17){
-	//gameBoardContainer.textContent = "You have destroyed all battleships";
-	document.getElementById("info").textContent = "You Have destroyed all Battleships! GameOver";
+	document.getElementById("instructions").textContent = "You Have destroyed all Battleships! GameOver";
+	document.getElementById("info").textContent = "";
+	document.getElementById("clear").textContent = "";
 }
 }
