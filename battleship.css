@@ -1,15 +1,21 @@
 body {
+
     margin: 60px auto;
     width: 70%;
     max-width: 950px;
+}
+html {
+  background-image: url("https://i.ytimg.com/vi/C6yVfvhYLPE/maxresdefault.jpg")
 }
 
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    text-align: center;
 }
 
 p, button, input {
+  text-align: center;
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
