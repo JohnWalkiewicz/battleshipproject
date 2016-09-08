@@ -78,9 +78,11 @@ function fireTorpedo() {
 
 var audio = new Audio('Voice 001.mp3');
 audio.play();
+
 fireLocation = document.getElementById("fireTorpedoInput").value;
 console.log(fireLocation);
 document.getElementById("fireTorpedoInput").value = null;
+
 convertLetterToNumber = fireLocation.substring(1,0);
 console.log(convertLetterToNumber);
 
@@ -102,8 +104,8 @@ if(gameBoard[convertLetterToNumber][collumNumber] == 1){
 }
 
 else{
-	var audio2 = new Audio('missedSoundEffect.mp3');
-	audio2.play();
+	///var audio2 = new Audio('missedSoundEffect.mp3');
+	//audio2.play();
 	document.getElementById("s" + convertLetterToNumber + collumNumber).style.backgroundColor = "grey";
 }
 document.getElementById("info").textContent = hitCount + " hits left. .";
