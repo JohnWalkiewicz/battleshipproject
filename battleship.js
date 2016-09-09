@@ -74,6 +74,8 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
+
+
 function fireTorpedo() {
 
 var audio = new Audio('Voice 001.mp3');
@@ -88,7 +90,6 @@ console.log(convertLetterToNumber);
 
 convertLetterToNumber = letterConversion[convertLetterToNumber];
 collumNumber = fireLocation.substring(1,3) - 1;
-
 
 
 
@@ -116,4 +117,5 @@ if(hitsOnShip ==17){
 	document.getElementById("info").textContent = "";
 	document.getElementById("clear").textContent = "";
 }
+
 }
