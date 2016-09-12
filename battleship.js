@@ -112,10 +112,9 @@ else{
 document.getElementById("info").textContent = hitCount + " hits left. .";
 
 
-if(hitsOnShip ==17){
+if(hitsOnShip == 17){
 	document.getElementById("instructions").textContent = "You Have destroyed all Battleships! GameOver";
 	document.getElementById("info").textContent = "";
 	document.getElementById("clear").textContent = "";
 }
-
 }
